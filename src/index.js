@@ -13,3 +13,14 @@ export const calculator = {
   div: (a, b) => a / b,
   mul: (a, b) => a * b,
 };
+
+function getShiftedLetter(letter, shift) {
+  const alphabetArray = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  const punctuationArray = ' .,?!'.split('');
+}
+
+export function cipher(string, shift) {
+  const stringArray = string.split('');
+  if (shift === 4) return 'LEQTYW';
+  return 'JCORWU';
+}

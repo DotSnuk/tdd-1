@@ -1,4 +1,4 @@
-import { capLetter, reverseString, calculator } from './index';
+import { capLetter, reverseString, calculator, cipher } from './index';
 
 it('Capitalize letters', () => {
   const input = [
@@ -34,4 +34,16 @@ it('Calculate', () => {
       inp.expect,
     );
   });
+});
+
+it('Ceasar cipher', () => {
+  expect(cipher('hampus', 2)).toBe('JCORWU');
+});
+
+it('Cipher 2', () => {
+  expect(cipher('hampus', 4)).toBe('LEQTYW');
+});
+
+it('Cipher one letter', () => {
+  expect(cipher('a', 1)).toBe('B');
 });
