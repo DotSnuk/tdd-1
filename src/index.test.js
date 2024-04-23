@@ -36,14 +36,13 @@ it('Calculate', () => {
   });
 });
 
-it('Ceasar cipher', () => {
-  expect(cipher('hampus', 2)).toBe('JCORWU');
-});
-
-it('Cipher 2', () => {
-  expect(cipher('hampus', 4)).toBe('LEQTYW');
-});
-
-it('Cipher one letter', () => {
-  expect(cipher('a', 1)).toBe('B');
+it('Ceaser cipher', () => {
+  const input = [
+    { string: 'hampus', shift: 2, expect: 'JCORWU' },
+    { string: 'hampus', shift: 4, expect: 'LEQTYW' },
+    { string: 'a', shift: 1, expect: 'B' },
+  ];
+  input.forEach(inp => {
+    expect(cipher(inp.string, inp.shift)).toBe(inp.expect);
+  });
 });

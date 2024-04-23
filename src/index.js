@@ -16,11 +16,15 @@ export const calculator = {
 
 function getShiftedLetter(letter, shift) {
   const alphabetArray = 'abcdefghijklmnopqrstuvwxyz'.split('');
-  const punctuationArray = ' .,?!'.split('');
+  const index = alphabetArray.indexOf(letter.toLowerCase());
+  return alphabetArray[index + shift];
 }
 
 export function cipher(string, shift) {
   const stringArray = string.split('');
-  if (shift === 4) return 'LEQTYW';
-  return 'JCORWU';
+  const cipheredArray = [];
+  stringArray.forEach(letter => {
+    cipheredArray.push(getShiftedLetter(letter, shift).toUpperCase());
+  });
+  return cipheredArray.join('');
 }
