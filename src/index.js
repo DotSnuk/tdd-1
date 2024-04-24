@@ -28,3 +28,31 @@ export function cipher(string, shift) {
   });
   return cipheredArray.join('');
 }
+
+function getAverage(arr) {
+  let total = 0;
+  arr.forEach(value => {
+    total += value;
+  });
+  return total / arr.length;
+}
+
+function getMin(arr) {
+  return Math.min(...arr);
+}
+
+function getMax(arr) {
+  return Math.max(...arr);
+}
+
+function getLength(arr) {
+  return arr.length;
+}
+
+export function analyzeArray(arr) {
+  const average = getAverage(arr);
+  const min = getMin(arr);
+  const max = getMax(arr);
+  const length = getLength(arr);
+  return { average, min, max, length };
+}

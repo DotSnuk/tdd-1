@@ -1,4 +1,10 @@
-import { capLetter, reverseString, calculator, cipher } from './index';
+import {
+  capLetter,
+  reverseString,
+  calculator,
+  cipher,
+  analyzeArray,
+} from './index';
 
 it('Capitalize letters', () => {
   const input = [
@@ -44,5 +50,27 @@ it('Ceaser cipher', () => {
   ];
   input.forEach(inp => {
     expect(cipher(inp.string, inp.shift)).toBe(inp.expect);
+  });
+});
+
+it('Analyze array', () => {
+  const input = [
+    {
+      arr: [1, 2, 3],
+      expect: {
+        min: 1,
+      },
+    },
+    { arr: [1, 2, 3, 4, 5, 6], expect: { length: 6 } },
+    {
+      arr: [55, 105, 33, 2],
+      expect: {
+        max: 105,
+        length: 4,
+      },
+    },
+  ];
+  input.forEach(inp => {
+    expect(analyzeArray(inp.arr)).toMatchObject(inp.expect);
   });
 });
